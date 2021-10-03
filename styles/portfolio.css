@@ -75,6 +75,10 @@ p {
   padding: 40px 60px;
 }
 
+.project-description3 {
+padding: 10px
+}
+
 @media (max-width: 900px) {
   h1 {
     font-size: 44px;
@@ -90,6 +94,11 @@ p {
   }
 
   .project-description {
+    padding: 0;
+    text-align: center;
+  }
+
+  .project-description3 {
     padding: 0;
     text-align: center;
   }
