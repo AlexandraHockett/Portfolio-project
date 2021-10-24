@@ -1,6 +1,6 @@
 :root {
-  --branding-color: #6c63ff;
-  --secondary-color: #f9f7fe;
+  --branding-color: #b438ae;
+  --secondary-color: linear-gradient(to top, #cd9cf2 0%, #f6f3ff 100%);
   --heading-font-family: "Playfair Display", serif;
   --default-font-family: "Poppins", sans-serif;
 }
@@ -19,7 +19,7 @@ h6 {
 }
 
 h1 {
-  font-size: 96px;
+  font-size: 45px;
   line-height: 1.5;
 }
 
@@ -35,6 +35,35 @@ p {
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
+}
+
+.wrapper {
+  height:10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 4s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
 }
 
 .hero {
@@ -53,6 +82,11 @@ p {
   font-weight: bold;
   margin: 0;
   color: #272142;
+}
+
+.flex {
+  text-align: center;
+  color: #ed7d59;
 }
 
 .hero h2 {
@@ -187,7 +221,7 @@ a.email-link:hover {
 
 @media (max-width: 900px) {
   h1 {
-    font-size: 44px;
+    font-size: 37px;
     line-height: 56px;
   }
 
