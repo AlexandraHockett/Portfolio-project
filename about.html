@@ -59,15 +59,33 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="content">
-            <h1 class="mb-4">Hi I am Alexandra Hockett</h1>
+            <h1 class="mb-4">Hi, I am Alexandra Hockett</h1>
             <h2 class="mb-4">Frontend Developer, based in Portugal.</h2>
             <p class="mb-4">
-              Hi I'm Alexandra and this is my portfolio. I've worked all my life
-              in restaurants and pubs, till the time that I became pregnant and
-              decided that it was time for a change. It’s never too late to
-              learn different skills, and that’s why I decide to get into
-              this new coding adventure… I hope to one day do this as a career,
-              so I need to get as much knowledge as possible 💪🏼
+              I am a Software Developer based in Portugal, passionately
+              transitioning from customer-facing roles in hospitality and
+              restaurants to the dynamic field of programming and web
+              development. My journey of self-improvement has led me to engage
+              in various courses, including Introduction to Coding, Web
+              Development, Responsive Web Development, and Advanced React
+              Development through SheCodes.
+            </p>
+            <p class="mb-4">
+              With a solid foundation in customer service and team management, I
+              discovered a deep passion and aptitude for programming. Driven by
+              my desire for a career shift, I have dedicated myself to practical
+              learning that mirrors real-world scenarios, emphasizing pragmatism
+              and the creation of tangible value. My approach is marked by a
+              growth mindset, unwavering dedication, and a relentless pursuit of
+              improvement.
+            </p>
+            <p class="mb-4">
+              My goal is to build a portfolio that showcases how my skills can
+              effectively address your needs. I am committed to following
+              established rules to achieve both personal and organizational
+              goals, always striving to progress and surpass myself. As evidence
+              of my commitment, I have earned several certificates, which I am
+              eager to leverage in contributing positively to your team. 💪🏼
             </p>
             <a href="work.html" class="btn btn-branding">See my projects</a>
           </div>
@@ -83,68 +101,88 @@
     </div>
     <div class="certificate-section">
       <h3
-        class="
-          text-center
-          d-flex
-          justify-content-center
-          d-sm-flex
-          certificate-header
-        "
+        class="text-center d-flex justify-content-center d-sm-flex certificate-header"
       >
         Certificates
       </h3>
       <div class="container">
         <div class="row mt-5">
-          <div class="col-md-3 certificate">
+          <div class="col-md-12 certificate">
             <a
+              id="certificate-link"
               href="https://www.shecodes.io/certificates/67bf8e29a72f0ed3fbbc8182892c91ba"
               target="_blank"
-              title="Alexandras Introduction to Coding certificate"
+              title="Alexandra's Introduction to Coding Certificate"
             >
               <img
+                id="certificate-image"
                 src="images/SheCodes Introduction to Coding Certificate.png"
                 alt="SheCodes Introduction to Coding Certificate"
                 class="img-fluid shadow-lg mb-4 certificate mb-3"
-                title="Alexandras SheCodes Introduction to Coding Certificate"
-            /></a>
-          </div>
-          <div class="col-md-3 certificate">
-            <a
-              href="https://www.shecodes.io/certificates/f92923ede3cb550b423dbe1cac2f4f6d"
-              target="_blank"
-              title="Alexandras 'Front-End Development' certificate"
-            >
-              <img
-                src="images/SheCodes Front End Development Certificate.png"
-                alt="SheCodes Front End Development Certificate"
-                class="img-fluid shadow-lg certificate mb-4"
-                title="Alexandras Front End Development Certificate"
-            /></a>
-          </div>
-          <div class="col-md-3 certificate">
-            <a
-              href="https://www.shecodes.io/certificates/bcfcc457518b7725d6541e00a418d712"
-              title="Alexandras 'Responsive Web Development' certificate"
-            >
-              <img
-                src="images/Responsive Web Development Certificate.png"
-                alt="SheCodes Responsive Web Development Certificate"
-                class="img-fluid shadow-lg certificate mb-3"
-                title="Alexandras Responsive Web Development Certificate"
-            /></a>
-          </div>
-          <div class="col-md-3 certificate">
-            <a href="" title="Alexandras 'React' certificate">
-              <img
-                src=""
-                alt="SheCodes React Certificate"
-                class="img-fluid shadow-lg certificate mb-3"
-                title="Alexandras React Certificate"
-            /></a>
+                title="Alexandra's Introduction to Coding Certificate"
+              />
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+      const certificates = [
+        {
+          link: "https://www.shecodes.io/certificates/67bf8e29a72f0ed3fbbc8182892c91ba",
+          imageUrl:
+            "https://s3.amazonaws.com/shecodesio-production/students/certificates/000/034/246/original/34246.png?1713536544",
+          title: "Alexandra's Introduction to Coding Certificate",
+        },
+        {
+          link: "https://www.shecodes.io/certificates/f92923ede3cb550b423dbe1cac2f4f6d",
+          imageUrl:
+            "https://s3.amazonaws.com/shecodesio-production/students/certificates/000/035/608/original/35608.png?1713554952",
+          title: "Alexandra's Front End Development Certificate",
+        },
+        {
+          link: "https://www.shecodes.io/certificates/bcfcc457518b7725d6541e00a418d712",
+          imageUrl:
+            "https://s3.amazonaws.com/shecodesio-production/students/certificates/000/042/017/original/42017.png?1713537710",
+          title: "Alexandra's Responsive Web Development Certificate",
+        },
+        {
+          link: "https://www.shecodes.io/certificates/44fc432a69159fa02bae45245ef7af0d",
+          imageUrl:
+            "https://s3.amazonaws.com/shecodesio-production/students/certificates/000/049/007/original/49007.png?1713538731",
+          title: "Alexandra's React Certificate",
+        },
+        {
+          link: "https://www.freecodecamp.org/certification/AlexandraHockett/responsive-web-design",
+          imageUrl:
+            "https://i.ibb.co/ckFSJ2N/Captura-de-ecr-2024-05-16-100856.png",
+          title: "Alexandras 'Responsive Web Design' certificate",
+        },
+      ];
+
+      let currentIndex = 0;
+
+      function showNextCertificate() {
+        currentIndex++;
+        if (currentIndex >= certificates.length) {
+          currentIndex = 0;
+        }
+
+        const certificate = certificates[currentIndex];
+        const certificateImage = document.getElementById("certificate-image");
+        const certificateLink = document.getElementById("certificate-link");
+
+        certificateImage.src = certificate.imageUrl;
+        certificateImage.alt = certificate.title;
+        certificateImage.title = certificate.title;
+        certificateLink.href = certificate.link;
+        certificateLink.title = certificate.title;
+      }
+
+      setInterval(showNextCertificate, 2000); // Change every 2 seconds
+    </script>
+
     <footer class="container">
       <div
         class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
