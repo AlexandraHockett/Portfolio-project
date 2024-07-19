@@ -53,6 +53,9 @@
             >
           </li>
         </ul>
+        <button id="dark-mode-toggle" class="btn btn-dark">
+          <i class="fas fa-lightbulb"></i>
+        </button>
       </nav>
     </div>
     <div class="content-container container">
@@ -126,7 +129,59 @@
         </div>
       </div>
     </div>
-
+    <footer class="container">
+      <div
+        class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
+      >
+        <div>
+          <h3>Work Inquiry</h3>
+          <p class="text-muted">Let's work together</p>
+        </div>
+        <div>
+          <a
+            href="contact.html"
+            class="btn btn-branding mt-3"
+            title="Contact Alexandra Hockett"
+            >Contact me</a
+          >
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mb-5">
+        <a
+          href="mailto:alexandramandio@gmail.com"
+          class="email-link"
+          title="Email Alexandra Hockett"
+        >
+          alexandramandio@gmail.com
+        </a>
+      </div>
+      <div class="social-links d-flex justify-content-center mb-5">
+        <a
+          href="https://www.linkedin.com/in/alexandra-hockett/"
+          target="_blank"
+          title="LinkedIn Profile"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://github.com/AlexandraHockett"
+          target="_blank"
+          title="GitHub Profile"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+      <p class="text-center mt-5">
+        This project was coded by Alexandra Hockett, and it is
+        <a
+          href="https://github.com/AlexandraHockett/Portfolio-project"
+          target="_blank"
+          >open-sourced
+        </a>
+        <img src="images/minnieCoder.gif" width="30" alt="minnieCoder" />
+      </p>
+    </footer>
+    <button id="scroll-to-top" class="btn btn-branding">
+      <i class="fa fa-arrow-up"></i>
+    </button>
     <script>
       const certificates = [
         {
@@ -181,63 +236,42 @@
       }
 
       setInterval(showNextCertificate, 2000); // Change every 2 seconds
-    </script>
+      const toggleButton = document.getElementById("dark-mode-toggle");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
 
-    <footer class="container">
-      <div
-        class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
-      >
-        <div>
-          <h3>Work Inquiry</h3>
-          <p class="text-muted">Let's work together</p>
-        </div>
-        <div>
-          <a
-            href="contact.html"
-            class="btn btn-branding mt-3"
-            title="Contact Alexandra Hockett"
-            >Contact me</a
-          >
-        </div>
-      </div>
-      <div class="d-flex justify-content-center mb-5">
-        <a
-          href="mailto:alexandramandio@gmail.com"
-          class="email-link"
-          title="Email Alexandra Hockett"
-        >
-          alexandramandio@gmail.com
-        </a>
-      </div>
-      <div class="social-links d-flex justify-content-center mb-5">
-        <a
-          href="https://www.linkedin.com/in/alexandra-hockett/"
-          target="_blank"
-          title="LinkedIn Profile"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-        <a
-          href="https://github.com/AlexandraHockett"
-          target="_blank"
-          title="GitHub Profile"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          href="https://www.twitter.com/alexandrahocke3"
-          target="_blank"
-          title="Twitter Profile"
-          ><i class="fab fa-twitter"></i
-        ></a>
-      </div>
-      <p class="text-center mt-5">
-        This project was coded by Alexandra Hockett, and it is
-        <a
-          href="https://github.com/AlexandraHockett/Portfolio-project"
-          target="_blank"
-          >open-sourced
-        </a>
-        <img src="images/minnieCoder.gif" width="30" alt="minnieCoder" />
-      </p>
-    </footer>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem(
+          "dark-mode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+
+      // Check if dark mode was previously enabled
+      if (
+        localStorage.getItem("dark-mode") === "true" ||
+        (prefersDarkScheme.matches && !localStorage.getItem("dark-mode"))
+      ) {
+        document.body.classList.add("dark-mode");
+      }
+
+      toggleButton.addEventListener("click", toggleDarkMode);
+
+      const scrollToTopButton = document.getElementById("scroll-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton.classList.add("show");
+        } else {
+          scrollToTopButton.classList.remove("show");
+        }
+      });
+
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>

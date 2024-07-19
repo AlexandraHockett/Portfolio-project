@@ -4,9 +4,14 @@
   --heading-font-family: "Playfair Display", serif;
   --default-font-family: "Poppins", sans-serif;
 }
+
+/* Default light mode styles */
 body {
   font-family: var(--default-font-family);
+  background-color: #fff;
+  color: #333;
 }
+
 h1,
 h2,
 h3,
@@ -38,7 +43,7 @@ p {
 }
 
 .wrapper {
-  height:10vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +51,7 @@ p {
 
 .typing-demo {
   width: 22ch;
-  animation: typing 4s steps(22), blink .5s step-end infinite alternate;
+  animation: typing 4s steps(22), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -56,32 +61,48 @@ p {
 
 @keyframes typing {
   from {
-    width: 0
+    width: 0;
   }
 }
-    
+
 @keyframes blink {
   50% {
-    border-color: transparent
+    border-color: transparent;
   }
 }
 
 .hero {
-  background: var(--secondary-color);
+  position: relative;
   text-align: center;
   padding: 80px 20px;
+  overflow: hidden;
 }
 
-.about-section {
-  text-align: center;
-  padding: 0;
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero h1 {
+  color: whitesmoke;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
 }
 
 .hero p {
   font-size: 36px;
   font-weight: bold;
   margin: 0;
-  color: #272142;
+  color: #fff;
 }
 
 .flex {
@@ -94,6 +115,7 @@ p {
   font-weight: normal;
   line-height: 1.5;
   font-size: 24px;
+  color: #fff;
 }
 
 .content-container {
@@ -122,6 +144,78 @@ p {
 
 .content {
   margin: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+  transition: transform 1s;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  backface-visibility: hidden;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(400px);
+}
+.carousel-item:nth-child(2) {
+  transform: rotateY(72deg) translateZ(400px);
+}
+.carousel-item:nth-child(3) {
+  transform: rotateY(144deg) translateZ(400px);
+}
+.carousel-item:nth-child(4) {
+  transform: rotateY(216deg) translateZ(400px);
+}
+.carousel-item:nth-child(5) {
+  transform: rotateY(288deg) translateZ(400px);
+}
+
+.carousel-item:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .btn-branding {
@@ -168,7 +262,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #272142;
+  color: #272142; /* Light color for default mode */
   transition: all 100ms ease-in-out;
 }
 
@@ -196,7 +290,7 @@ footer {
 
 a.email-link {
   text-decoration: none;
-  color: black;
+  color: black; /* Default color for light mode */
   font-size: 24px;
 }
 
@@ -219,6 +313,87 @@ a.email-link:hover {
   background: var(--branding-color);
 }
 
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .btn-dark {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Dark mode styles for hero section */
+body.dark-mode .hero h1,
+body.dark-mode .hero h2,
+body.dark-mode .hero h3,
+body.dark-mode .hero p {
+  color: white; /* Ensure text in hero section is visible */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p {
+  color: white; /* Ensure text in hero section is visible */
+}
+
+body.dark-mode footer h3 {
+  color: black; /* Ensure text in hero section is visible */
+}
+
+/* Dark mode styles for nav */
+body.dark-mode nav a {
+  color: #fff; /* Light color for nav links in dark mode */
+}
+
+body.dark-mode nav a:hover {
+  color: var(--branding-color);
+}
+
+/* Dark mode styles for footer */
+body.dark-mode footer a.email-link {
+  color: #fff; /* Light color for email links in dark mode */
+}
+
+/* Dark mode styles for buttons and links */
+body.dark-mode .btn-branding {
+  background: var(--branding-color);
+  color: white;
+}
+
+body.dark-mode .btn-branding-outline {
+  color: var(--branding-color);
+  border: 1px solid var(--branding-color);
+}
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-to-top.show {
+  display: flex;
+}
+
+#scroll-to-top i {
+  font-size: 20px;
+}
+/* Media Queries for Responsive Design */
 @media (max-width: 900px) {
   h1 {
     font-size: 37px;
@@ -241,5 +416,32 @@ a.email-link:hover {
   .project-description3 {
     padding: 0;
     text-align: center;
+  }
+
+  #hero-video {
+    display: none; /* Hide video on small screens */
+  }
+
+  .hero-content {
+    background: var(--secondary-color); /* Add a fallback background color */
+    padding: 40px 20px;
+  }
+
+  .hero {
+    color: black; /* Set text color to black for the hero section */
+  }
+
+  .hero h1,
+  .hero h2,
+  .hero h3,
+  .hero p {
+    color: black; /* Override text colors for headings and paragraphs within the hero section */
+  }
+
+  body.dark-mode .hero h1,
+  body.dark-mode .hero h2,
+  body.dark-mode .hero h3,
+  body.dark-mode .hero p {
+    color: black; /* Ensure text in hero section is visible */
   }
 }

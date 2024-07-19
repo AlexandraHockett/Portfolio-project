@@ -53,6 +53,9 @@
             >
           </li>
         </ul>
+        <button id="dark-mode-toggle" class="btn btn-dark">
+          <i class="fas fa-lightbulb"></i>
+        </button>
       </nav>
     </div>
     <div class="content-container container">
@@ -64,22 +67,12 @@
           <a href="mailto:alexandramandio@gmail.com"
             >alexandramandio@gmail.com<br /><img
               src="images/email.png"
-              alt="LinkedIn Icon"
-              width="30" />
-            <hr
-          /></a>
-        </p>
-        <h3>Twitter</h3>
-        <p>
-          <a href="https://www.twitter.com/AlexandraHocke3" target="_blank">
-            @AlexandraHocke3<br /><img
-              src="images/x.png"
-              alt="LinkedIn Icon"
+              alt="Email Icon"
               width="30"
             />
-            <hr />
           </a>
         </p>
+        <hr />
         <h3>LinkedIn</h3>
         <p>
           <a
@@ -107,5 +100,46 @@
         <img src="images/minnieCoder.gif" width="30" alt="minnieCoder" />
       </p>
     </footer>
+    <button id="scroll-to-top" class="btn btn-branding">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+    <script>
+      const toggleButton = document.getElementById("dark-mode-toggle");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem(
+          "dark-mode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+
+      // Check if dark mode was previously enabled
+      if (
+        localStorage.getItem("dark-mode") === "true" ||
+        (prefersDarkScheme.matches && !localStorage.getItem("dark-mode"))
+      ) {
+        document.body.classList.add("dark-mode");
+      }
+
+      toggleButton.addEventListener("click", toggleDarkMode);
+
+      const scrollToTopButton = document.getElementById("scroll-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton.classList.add("show");
+        } else {
+          scrollToTopButton.classList.remove("show");
+        }
+      });
+
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>

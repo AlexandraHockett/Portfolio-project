@@ -56,18 +56,27 @@
             >
           </li>
         </ul>
+        <button id="dark-mode-toggle" class="btn btn-dark">
+          <i class="fas fa-lightbulb"></i>
+        </button>
       </nav>
     </div>
     <div class="hero">
-      <p>Hi, I am</p>
-      <div class="wrapper">
-        <div class="typing-demo"><h1>Alexandra Hockett</h1></div>
-      </div>
-      <h2 class="mb-5">Front-end developer based in Portugal</h2>
-      <div>
-        <a href="/contact.html" class="btn btn-branding" title="Contact me"
-          >Contact me</a
-        >
+      <video autoplay muted loop id="hero-video">
+        <source src="images/purpleTechnology.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-content">
+        <p>Hi, I am</p>
+        <div class="wrapper">
+          <div class="typing-demo"><h1>Alexandra Hockett</h1></div>
+        </div>
+        <h2 class="mb-5">Front-end developer based in Portugal</h2>
+        <div>
+          <a href="/contact.html" class="btn btn-branding" title="Contact me"
+            >Contact me</a
+          >
+        </div>
       </div>
     </div>
     <p class="text-center m-5">Featured projects from my portfolio</p>
@@ -75,28 +84,24 @@
       <div class="row mb-5 align-items-center">
         <div class="col d-none d-lg-flex">
           <img
-            src="https://i.ibb.co/xLNhfS4/Pub.png"
+            src="images/3D PROJECT.png"
             class="img-fluid"
-            alt="Pub project preview"
+            alt="3D PROJECT preview"
           />
         </div>
         <div class="col">
           <div class="project-description">
-            <h2 class="mb-5">Pub Project</h2>
+            <h2 class="mb-5">3D Portfolio Project</h2>
             <p class="mb-5 text-muted">
-              This was my first final project for SheCodes Basics. I created a
-              simple, interactive website about pubs using HTML, CSS, and
-              JavaScript. While it's not responsive, this project was my
-              introduction to web development. It allowed me to learn the
-              fundamentals of structuring content, styling with CSS, and adding
-              basic interactivity with JavaScript. This experience sparked my
-              passion for coding and set the foundation for my future projects.
+              This project was built using React and Three.js, showcasing a 3D
+              portfolio experience. It demonstrates advanced web development
+              techniques, including 3D graphics and interactive elements.
             </p>
             <a
-              href="https://s3.amazonaws.com/shecodesio-production/challenge_submissions/files/000/393/013/original/Final_Project_Pub.html?1624476695"
+              href="https://alexhockett.netlify.app"
               target="_blank"
               class="btn btn-branding mt-3"
-              title="Launch Pub Project"
+              title="Launch 3D Portfolio Project"
             >
               Launch Project
             </a>
@@ -106,21 +111,17 @@
       <div class="row mb-5 align-items-center">
         <div class="col">
           <div class="project-description">
-            <h2 class="mb-5">Weather Project</h2>
+            <h2 class="mb-5">My Cute Penguin</h2>
             <p class="mb-5 text-muted">
-              This was my second final project for the SheCodes Plus workshop.
-              Built using HTML, CSS, and Vanilla JavaScript, this project marked
-              my first experience with integrating an API. The website can
-              recognize the user's location and display the weather forecast for
-              the upcoming week. Although it is not responsive, this project
-              allowed me to deepen my understanding of web development and
-              further enhance my coding skills.
+              This project was created with HTML and CSS to showcase a cute
+              penguin design. It’s a simple yet charming example of creative web
+              design using fundamental web technologies.
             </p>
             <a
-              href="https://theweatherhockettapp.netlify.app/"
+              href="https://mycutepenguin.netlify.app/"
               target="_blank"
               class="btn btn-branding mt-3"
-              title="Launch Weather Project"
+              title="Launch Cute Penguin Project"
             >
               Launch Project
             </a>
@@ -128,43 +129,39 @@
         </div>
         <div class="col d-none d-lg-flex justify-content-center">
           <img
-            src="https://i.ibb.co/5xX4WNG/Weather-Project.png"
+            src="images/myCutePenguin.png"
             class="img-fluid"
-            alt="Weather project preview"
+            alt="Cute Penguin preview"
           />
         </div>
       </div>
       <div class="row mb-5 align-items-center">
         <div class="col d-none d-lg-flex justify-content-center">
           <img
-            src="https://i.ibb.co/Xsx6WXV/portfolio.png"
+            src="images/ASP.NET.png"
             class="img-fluid"
-            alt="Portfolio Project preview"
+            alt="ASP.NET Project preview"
           />
         </div>
         <div class="col">
           <div class="project-description">
-            <h2 class="mb-5">Responsive Portfolio</h2>
+            <h2 class="mb-5">ASP.NET Project</h2>
             <p class="mb-5 text-muted">
-              This was my third project for the SheCodes Responsive workshop. It
-              is my personal portfolio, showcasing my work and skills. Built
-              using HTML, CSS, Bootstrap, and JavaScript, this project is fully
-              responsive, ensuring it looks great on any device. This experience
-              allowed me to apply and deepen my knowledge of responsive design
-              principles and modern web development practices.
+              This project is built with ASP.NET, incorporating HTML, CSS,
+              JavaScript, C#, and SQL Server. It demonstrates a comprehensive
+              understanding of web development and server-side programming.
             </p>
             <a
-              href="https://alexhockettportfolio.netlify.app/"
+              href="https://github.com/AlexandraHockett/portfolioASP.NET"
               target="_blank"
               class="btn btn-branding mt-3"
-              title="Portfolio Project"
+              title="View ASP.NET Project on GitHub"
             >
-              Launch Project
+              View on GitHub
             </a>
           </div>
         </div>
       </div>
-
       <footer>
         <div
           class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
@@ -204,12 +201,6 @@
             title="GitHub Profile"
             ><i class="fab fa-github"></i
           ></a>
-          <a
-            href="https://www.twitter.com/alexandrahocke3"
-            target="_blank"
-            title="Twitter Profile"
-            ><i class="fab fa-twitter"></i
-          ></a>
         </div>
         <p class="text-center mt-5">
           This project was coded by Alexandra Hockett, and it is
@@ -222,5 +213,46 @@
         </p>
       </footer>
     </div>
+    <button id="scroll-to-top" class="btn btn-branding">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+    <script>
+      const toggleButton = document.getElementById("dark-mode-toggle");
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem(
+          "dark-mode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+
+      // Check if dark mode was previously enabled
+      if (
+        localStorage.getItem("dark-mode") === "true" ||
+        (prefersDarkScheme.matches && !localStorage.getItem("dark-mode"))
+      ) {
+        document.body.classList.add("dark-mode");
+      }
+
+      toggleButton.addEventListener("click", toggleDarkMode);
+
+      const scrollToTopButton = document.getElementById("scroll-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton.classList.add("show");
+        } else {
+          scrollToTopButton.classList.remove("show");
+        }
+      });
+
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>
