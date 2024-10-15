@@ -445,3 +445,12 @@ body.dark-mode .btn-branding-outline {
     color: black; /* Ensure text in hero section is visible */
   }
 }
+
+/*WORK.HTML*/
+
+/* Set a fixed size for project images */
+.project-image {
+  width: 100%; /* Make the image responsive within its column */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+}
